@@ -1,0 +1,49 @@
+/*Warm Beer
+https://www.eggradients.com/category/flame-gradient
+*/
+
+.module-border-wrap {
+    max-width: 750px;
+    width: auto; 
+    height: auto;
+    min-height: 500px;
+    margin: 30px auto;
+    text-align: center;
+    padding: 4px;
+    background-color: #bf033b;
+    background-image: var(--gradient); 
+    box-shadow:rgba(100, 78, 10, .5) 0px 4px 8px;
+    background-size: 100%;
+}
+.module {
+  height: auto;
+  max-height: 550px;
+    background-color: black;
+    color: #fff;
+    padding: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+#card-404{
+position: absolute;
+z-index: 2;
+width: 70%;
+height: 50%;
+margin: auto;
+top: 0; left: 0; bottom: 0; right: 0;
+color: #fff;
+ border: 1px solid #ffffff;
+}
+
+#video-bg{
+    position: relative;
+    z-index: 1;
+    min-width: 550px;
+    min-height: 550px;
+    margin: auto;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+}

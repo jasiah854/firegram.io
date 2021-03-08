@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+ <meta charset="UTF-8">
+    <title>Edit Post</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+<!--font awesome icons-->
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+  	
+	<link rel="stylesheet" th:href="@{/css/fire.css}">
+   <link rel="stylesheet" th:href="@{/css/index.css}">
+</head>	
+<body >
+<div th:replace="fragments/navbar :: nav"></div> 
+  <div class="module-border-wrap">
+        <div class="module">
+          
+
+        <h2><i class="fas fa-fire fa-gradient"></i> Edit Post </h2> 
+        <!--text input -->
+         
+        <form  th:action="@{/editpost}"  method="post" class="text-center" th:object="${post}" enctype="multipart/form-data" >
+        
+        <label for="image">Image </label>
+    	<input class="rounded-pill" type="file" id="image" name="file" accept="image/png, image/jpeg" th:required="required" />
+    	 
+    	 <br><br>
+    	 
+    	<label for="User"> User </label>
+        <input type="text" id="User" name="username" th:value="*{username}"  th:required="required" readonly="readonly" /> 
+       
+    	 <br><br>
+        
+       <label for="postid"> Post Id </label>
+        <input type="text" id="postid" name="id"  th:value="*{id}"  th:required="required" readonly="readonly" /> 
+        
+        <br><br>
+        
+        <label for="Title"> Title </label>
+        <input type="text" id="Title" name="posttitle" th:placeholder="*{posttitle}" th:required="required" /> 
+         
+       <br><br>
+       
+        <label for="caption"> Body </label>
+       <textarea id="caption" name="caption" class="form-control"  rows="4" cols="10" th:required="required"  > </textarea>
+    
+       
+       <div class="text-center ">
+       <button class="mt-1 mx-auto d-block bg-dark border rounded border-danger" type="submit" value="Update Post" >
+		<i class="far fa-edit fa-gradient"> </i>
+		</button>
+       </div>
+    </form> 
+    
+    
+</div> </div>
+       
+       
+        
+   
+                      
+       
+  
+  <div th:replace="fragments/footer :: footer"></div>   
+</body>
+</html>

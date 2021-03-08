@@ -1,0 +1,75 @@
+.select{
+position: absolute;
+right: 10px;
+top: 10px;
+}
+
+/*login box*/
+.module-border-wrap {
+    max-width: 700px;
+    margin: 30px auto;
+    position: relative;
+    text-align: center;
+    padding: 4px;
+    background-color: #bf033b;
+    background-image: var(--gradient); 
+    box-shadow:rgba(100, 78, 10, .45) 2px 4px 8px;
+    background-size: 100%;
+}
+.module {
+    background: var(--background-color);
+    color: var(--text-color);
+    padding: 1rem;
+}
+
+textarea:focus, input:focus{
+    outline: none;
+}
+#input-box{
+    min-width: 300px;
+    height: auto;
+    min-height: 100px;
+    margin: 15px auto;
+    padding: 15px 10px;
+    border-radius: 10px;
+    border: 1px solid var(--yellow);
+    text-align:center;
+}
+input[type="text"]
+{
+    font-size:20px;
+}
+
+#user-pass{
+    border: 2px solid #111;
+    border-radius: 20px;
+    height: 30px;
+    width: 200px;
+    text-align: center; 
+}
+#Email{
+	border: 2px solid #111;
+    border-radius: 20px;
+    height: 30px;
+    width: 200px;
+    text-align: center;
+}
+#user-name{
+    border: 2px solid #111;
+    border-radius: 20px;
+    height: 30px;
+    width: 200px;
+    text-align: center; 
+}
+#button2{
+    display: block;
+    margin: 5px auto;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    text-align: center;
+    
+}
+#foot{
+    color: var(--text-color);
+}

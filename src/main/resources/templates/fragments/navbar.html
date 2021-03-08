@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"> 
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="theme-color" content="#ffc61a"> 
+    <link rel="icon" type="image/png" th:src="@{/images-and-videos/fire-solid.png} ">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- bootstrap4 -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+	<!--font awesome icons-->
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    <!-- reference images, CSS, and JavaScript in the same way 
+    <link rel="stylesheet" th:href="@{/css/formatting.css}">-->
+    <link rel="stylesheet"  href="../static/css/Layout.css" th:href="@{/css/style.css}" />
+	  <link rel="stylesheet" th:href="@{/css/index.css}">
+	<link rel="stylesheet" th:href="@{/css/fire.css}">  
+	<link rel="stylesheet" th:href="@{/css/animations.css}"> 
+	
+</head>
+
+<body>
+
+	<nav th:fragment="nav" class="navbar navbar-expand-lg navbar-dark   nav-fire ">
+	<a th:href="@{/}" class="text-white"><i class="fas fa-fire fa-gradient navbar-brand no-u" ></i>Firegram.<span class="yellow">io</span> </a>
+	  <button class="navbar-toggler border-danger" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+	    <span class="navbar-toggler-icon"></span>
+	  </button>
+	
+	  <div class="collapse navbar-collapse " id="navbarTogglerDemo02">
+	    <ul class="navbar-nav mx-auto mt-2 mt-lg-0">
+	      <li class="nav-item active">
+	        <a class="nav-link" th:href="@{/}"><i class="fas fa-home fa-gradient"></i> Home</a>
+	      </li>
+	      <li class="nav-item active">
+	        <a class="nav-link" th:href="@{/notes}"><i class="fas fa-book  fa-gradient"></i> Notes</a>
+	      </li>
+	  
+	      <li class="nav-item active">
+	        <a class="nav-link" th:href="@{/about}"><i class="fas fa-fire fa-gradient "></i> About</a>
+	      </li>
+	    
+	    </ul>
+	    
+	     <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+	      <li class="nav-item active">
+	        <a class="nav-link" th:href="@{/logout}"><i class=" fas fa-sign-out-alt fa-gradient"></i> Sign Out</a>
+	      </li>
+	   </ul>
+	  </div>
+	</nav>
+	
+
+</body>

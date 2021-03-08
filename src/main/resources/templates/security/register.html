@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"> 
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+	<!--font awesome icons-->
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+	<link rel="stylesheet" th:href="@{/css/fire.css}">
+   <link rel="stylesheet" th:href="@{/css/index.css}">
+</head>
+<body>	
+<!--login box-->
+    <div class="module-border-wrap">
+        <div class="module">
+           
+
+        <h1><i class="fas fa-fire fa-gradient"></i> FireGram.<span class="yellow">io</span> </h1> 
+        <!--text input -->
+        <div id="input-box"> 
+        <form class= "text-center" th:action="@{/register-new-user}" method="post" enctype="multipart/form-data" >
+    	
+    	<label for="profile-image"><i class="far fa-images fa-gradient"></i></i> Profile Picture </label>
+    	<input class="rounded-pill" type="file" id="profile-image" name="file" accept="image/png, image/jpeg" th:required="required" />
+    	
+    	<br><br> 
+    	
+        <label for="user-name"><i class="fas fa-user fa-gradient"></i> User Name </label>
+        <input type="text" id="user-name" name="username" placeholder="Username" th:required="required"  /> 
+      
+       <br><br>
+       
+        <label for="Email"><i class="far fa-envelope fa-gradient"></i> Email </label>
+        <input type="text" id="Email" name="email" placeholder="Email" th:required="required"  /> 
+       
+        <br><br>
+        
+        <label for="user-pass"><i class="fas fa-key fa-gradient"></i> Password </label>
+        <input type="text" id="user-pass" name="password" placeholder="password" th:required="required"  /> 
+       
+       <div class="text-center ">
+       <button class="mt-1 mx-auto d-block bg-dark border rounded border-danger" type="submit" value="Register" >
+	<i class="fas fa-user-plus fa-gradient"></i>
+		</button>
+       </div>
+        
+       
+        </form>
+        
+        <p class="mt-2"> Have an Account ? <a class="yellow" th:href="@{/login}"> Sign In!</a></p>
+        </div>
+        </div>
+    </div>
+
+
+
+<div th:replace="fragments/footer :: footer"></div> 
+</body>
+</html>

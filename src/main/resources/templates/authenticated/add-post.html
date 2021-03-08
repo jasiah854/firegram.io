@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	
+<head>
+ <meta charset="UTF-8">
+    <title>Add Post</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<!--font awesome icons-->
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+  	<link rel="stylesheet" th:href="@{/css/fire.css}">
+   <link rel="stylesheet" th:href="@{/css/index.css}">
+</head>		
+
+<body>	
+	 <div th:replace="fragments/navbar :: nav"></div>									
+
+  <div class="module-border-wrap ">
+        <div class="module">
+          
+
+        <h2><i class="fas fa-fire fa-gradient"></i> Create Post </h2> 
+     <form class= "mx-auto  justify-content-center" th:action="@{/addpost/} + ${currentUser.username}" method="post" enctype="multipart/form-data" >
+     
+     <div class=" mt-3 mx-auto">
+      <input class="rounded" type="file" name="file" accept="image/png, image/jpeg" th:required="required" />
+    </div> 
+    
+    <div class="form-group mt-3 mx-auto"> 
+    	 
+        <input type="text" id="posttitle" name="posttitle" placeholder="Title" th:required="required"  /> 
+      </div>  
+    
+     <div class="form-group mt-3">
+      
+    <textarea th:placeholder="Body" class="form-control"  rows="4" cols="10" id="caption" name="caption" th:required="required"  > </textarea>
+    </div>
+     
+   
+       <button class="mt-1 mx-auto d-block bg-dark border rounded border-danger" type="submit" value="Create Post" >
+		<p class="text-white"><i class="far fa-plus-square fa-gradient"></i> Create Post</p>
+		</button>
+      
+   
+    
+    </form>
+    </div>
+</div>
+	
+
+
+<div th:replace="fragments/footer :: footer"></div> 
+</body>
+</html>

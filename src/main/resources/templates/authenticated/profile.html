@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	
+<head>
+ <meta charset="UTF-8">
+    <title>Firegram.io</title>
+    <!-- CSS ANIMATIONS .. https://animista.net/play/entrances/slide-in -->
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+	<!--font awesome icons-->
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+  	  <link rel="stylesheet" th:href="@{/css/index.css}">
+	<link rel="stylesheet" th:href="@{/css/fire.css}">
+ <link rel="stylesheet" th:href="@{/css/animations.css}"> 
+</head>		
+
+<body >	
+ <div th:replace="fragments/navbar :: nav"></div>
+   
+<div class="col-sm-12 col-md-8 col-lg-6 container rounded  mt-3 module-border-wrap " >
+<div class="row module">	
+	
+	<div class="col-3 ">
+     <img class="rounded border border-danger mx-auto " alt="" th:src="*{'data:image/jpeg;base64,'+{currentUser.profileImage}}" style="width: 100px;height: 100px;">
+    <p class="text-light text-center">@[[${currentUser.username}]]</p>
+    </div>
+	<div class="col-6 ml-5 ">
+	<a class="text-white d-block" th:href="@{/addpost/} + ${currentUser.username}" >  <i class="fas fa-plus-circle  fa-gradient"></i> Create Post</a>
+	<a class="text-white d-block" th:href="@{/notes/}"> <i class="far fa-sticky-note fa-gradient"></i> Create Note</a>
+	<a class="text-white d-block" th:href="@{/about/}"> <i class="fas fa-fire fa-gradient"></i> What is Firegram?</a>
+	
+	</div>
+	
+ </div>	
+</div>
+	<!-- section for post  -->
+		<div class=" col-sm-5 col-md-4 col-lg-4 m-4 p-4 mx-auto post slide-in-top" th:each="post: ${post}">
+		
+		<div class="">
+		 <img class="img-fluid img-thumbnail" alt="" th:src="*{'data:image/jpeg;base64,'+{post.image}}" >
+		</div>
+		
+		<div class="">
+		<h3 class=" text-light">[[${post.posttitle}]]</h3>		 
+		 <p class=" ">[[${post.caption}]]</p>
+		<!-- <h4 class="yellow">Post Id:[[${post.id}]]</h4> --> 
+	
+		 <a class=" text-white" th:href="@{/editpost/} + ${post.id}"> <i class="far fa-edit fa-gradient"></i> Edit Post</a>
+	     <a class="mb-5 text-white"  th:href="@{/deletepost/} + ${post.id}"> <i class="fas fa-trash-alt fa-gradient"></i> Delete post</a> 
+
+		</div>
+		</div>
+  	
+<div th:replace="fragments/footer :: footer"></div> 
+</body>
+</html>
